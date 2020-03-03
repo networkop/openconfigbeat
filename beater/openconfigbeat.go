@@ -136,7 +136,7 @@ func convertUpdate(dataset string, prefix string, update *pb.Update) ([]common.M
 	case []interface{}:
 		maps = make([]common.MapStr, len(outputValue))
 		for i, u := range outputValue {
-			k := fmt.Sprintf("%T", u)
+			k := fmt.Sprint("Array")
 			m := makeMapStr(map[string]interface{}{k: u})
 			maps[i] = m
 		}
